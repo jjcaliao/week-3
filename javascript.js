@@ -55,7 +55,7 @@ function game(){ //generates 5 rounds
     for(let i=0; i<5; i++){
         let playerc = window.prompt("rock, paper or scissors?").toLowerCase();
         let computerc = computerPlay();
-        console.log("Computer picked " + computerc);
+        console.log("Computer picked " + computerc + " and you picked " + playerc);
         round(playerc, computerc);
         console.log(round(playerc, computerc));
         console.log("Computer: " + cscore/2 + " You: " + pscore/2);
