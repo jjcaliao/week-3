@@ -8,6 +8,7 @@ var computerScore = document.getElementById("cscore");
 var playerScore = document.getElementById("pscore");
 var result = document.getElementById("result");
 var btns = document.querySelectorAll("button");
+var reset = document.getElementById("reset");
 
 function computerPlay(){ //randomly generates choice
     let choice = choices[Math.floor(Math.random()*choices.length)];
@@ -73,6 +74,8 @@ btns.forEach(possibleChoice => possibleChoice.addEventListener('click', function
         }
         result.style.color = "#ffffff";
         result.innerHTML = "You win!";
+        reset.style.display = "flex";
+
     }
     else if(cscore == 5){
         for (const btn of btns) {
@@ -80,8 +83,18 @@ btns.forEach(possibleChoice => possibleChoice.addEventListener('click', function
         }
         result.style.color = "#ffffff";
         result.innerHTML = "Computer wins!";
+        reset.style.display = "flex";
     }
 }));
+
+function resetGame(){
+    reset.style.display = "none";
+    cscore = 0;
+    pscore = 0;
+    computerScore.innerHTML = cscore;
+    playerScore.innerHTML = pscore;
+    result.innerHTML = "";
+}
 
 //var c = "rock";
 //console.log(round(c, computerPlay()));
